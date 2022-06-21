@@ -1,3 +1,20 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://example.org"
+languageCode = "en-us"
+title = "run_as_root Dev Blog"
+
+author = "David Lambauer"
+copyright = "Copyright © 2022, run_as_root GmbH, all rights reserved."
+
+#disableKinds = ["page", "section", "taxonomy", "term"]
+
+[Params]
+    mainSections = ["post"]
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.75.0"
+
+[build]
+# Used by PurgeCSS
+writeStats = true
