@@ -1,4 +1,10 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-{{ .Content }}
+{{ $url := .Permalink }}
+<h1 class="tracking-tighter text-8xl font-bebas-neue text-center">Our Recent Articles</h1>
+{{ range (where site.RegularPages "Type" "posts").Reverse }}
+<article class="flex flex-col gap-4 font-open-sans tracking-wide text-justify break-words">
+    {{ .Content | safeHTML | truncate 500 }}
+    <a href="{{ .Permalink }}" alt="{{ .Title }}">read more</a>
+</article>
+{{ end }}
 {{ end }}

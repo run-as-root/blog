@@ -17,3 +17,7 @@ html {
 h2 {
     @apply font-bebas-neue tracking-tight text-6xl
 }
+
+a {
+    @apply cursor-pointer underline text-gray-600
+}

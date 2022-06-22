@@ -22,23 +22,42 @@
 
     <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
 </head>
-<body class="my-10 flex flex-col gap-28">
+<body class="my-10 flex flex-col gap-28 max-w-5xl m-auto scroll-smooth">
 <header class="flex justify-center">
     <a href="/" class=""><img src="/logo.svg" alt="run_as_root Logo" width="250"/></a>
 </header>
 
-<main class="max-w-5xl m-auto">
-    <div class="flex flex-col-reverse gap-28">
-        {{ $url := .Permalink }}
-        {{ range where site.RegularPages "Type" "posts" }}
-        <article class="flex flex-col gap-4 font-open-sans tracking-wide text-justify break-words">
-            {{ .Content }}
-            <a class="cursor:pointer underline decoration-pink-500" href="{{ .Permalink }}" alt="{{ .Title }}">read more</a>
-        </article>
-        {{ end }}
-        <h1 class="tracking-tighter text-8xl font-bebas-neue text-center">Our Recent Articles</h1>
-    </div>
+<main class="flex flex-col gap-28">
+    {{ block "main" . }}
+
+    {{ end }}
 </main>
-<footer></footer>
+
+<div class="w-full border-t border-gray-300"></div>
+
+<footer>
+    <div class="flex justify-between flex-nowrap">
+        <ul class="leading-8 list-disc list-outside">
+            <li><a href="">Lorem ipsum dolor.</a></li>
+            <li><a href="">Lorem ipsum dolor.</a></li>
+            <li><a href="">Lorem ipsum dolor.</a></li>
+        </ul>
+        <ul class="leading-8 list-disc list-outside">
+            <li><a href="">Lorem ipsum dolor.</a></li>
+            <li><a href="">Lorem ipsum dolor.</a></li>
+            <li><a href="">Lorem ipsum dolor.</a></li>
+        </ul>
+        <ul class="leading-8 list-disc list-outside">
+            <li><a href="">Lorem ipsum dolor.</a></li>
+            <li><a href="">Lorem ipsum dolor.</a></li>
+            <li><a href="">Lorem ipsum dolor.</a></li>
+            <li><a href="">Lorem ipsum dolor.</a></li>
+        </ul>
+    </div>
+
+    <div class="copyright text-center mt-4">
+        Copyright © run_as_root GmbH 2022
+    </div>
+</footer>
 </body>
 </html>
